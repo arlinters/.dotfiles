@@ -16,4 +16,8 @@ antigen theme robbyrussell
 
 antigen apply
 
+if type "nvim" > /dev/null; then
+	alias vim="nvim"
+fi
+
 source $HOME/.zsh_profile
