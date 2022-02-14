@@ -5,7 +5,9 @@ set shiftwidth=2
 set termguicolors
 
 call plug#begin('~/.vim/plugged')
-Plug 'dracula/vim'
+Plug 'dracula/vim',{'name':'dracula'}
+Plug 'tmhedberg/SimpylFold'
+Plug 'Valloric/YouCompleteMe'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
@@ -22,8 +24,22 @@ endif
 syntax enable
 colorscheme dracula
 
+" split navigations
+" Move below
+nnoremap <C-J> <C-W><C-J>
+" Move to the split above
+nnoremap <C-K> <C-W><C-K>
+" Move to the split on the right
+nnoremap <C-L> <C-W><C-L>
+" Move to the spliut on the left
+nnoremap <C-H> <C-W><C-H>
 
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+let g:SimpylFold_docstring_preview=1
 
+" leader mappings
 let mapleader = " "
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <leader>pv :Ex<CR>
@@ -39,3 +55,28 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Nerdtree remap
 nnoremap <leader>ft :NERDTreeFocus<CR>
+
+
+
+" Set indentation on filetypes
+" python
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+" html, js, css
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+" Flag unnecessary whitespace
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" utf 8 support
+set encoding=utf-8
