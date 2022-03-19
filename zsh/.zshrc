@@ -4,6 +4,7 @@ antigen use oh-my-zsh
 #Bundles from the default repo
 antigen bundle git
 antigen bundle docker
+antigen bundle nvm
 antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
