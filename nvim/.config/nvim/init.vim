@@ -1,3 +1,15 @@
+set path+=**
+set wildmode=longest,list,full
+set wildmenu
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/node_modules/*
+set wildignore+=**/android/*
+set wildignore+=**/ios/*
+set wildignore+=**/.git/*
+
 set relativenumber
 
 set tabstop=2
@@ -11,9 +23,21 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+" lsp plugins
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/lsp_extensions.nvim'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind-nvim'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'simrat39/symbols-outline.nvim'
+
+" theming
 Plug 'dracula/vim',{'name':'dracula'}
+
+" DX
 Plug 'tmhedberg/SimpylFold'
-" Plug 'Valloric/YouCompleteMe'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
