@@ -13,7 +13,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim',{'name':'dracula'}
 Plug 'tmhedberg/SimpylFold'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
