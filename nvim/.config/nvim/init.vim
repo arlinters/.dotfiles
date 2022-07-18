@@ -24,14 +24,9 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " lsp plugins
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/lsp_extensions.nvim'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'onsails/lspkind-nvim'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'simrat39/symbols-outline.nvim'
+Plug 'neoclide/coc.nvim', {'branch':'release'}
+" bettter syntax highlighting for filetypes
+Plug 'sheerun/vim-polyglot'
 
 " theming
 Plug 'dracula/vim',{'name':'dracula'}
@@ -46,6 +41,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter',{'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
+
 
 " color schemes
 if (has("termguicolors"))
@@ -90,14 +86,14 @@ nnoremap <leader>ft :NERDTreeFocus<CR>
 
 " Set indentation on filetypes
 " python
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4
+"    \ set softtabstop=4
+"    \ set shiftwidth=4
+"    \ set textwidth=79
+"    \ set expandtab
+"    \ set autoindent
+"    \ set fileformat=unix
 
 " html, js, css
 au BufNewFile,BufRead *.js, *.html, *.css
