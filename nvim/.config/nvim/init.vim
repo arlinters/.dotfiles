@@ -10,6 +10,8 @@ set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
+set nohls
+
 set relativenumber
 
 set tabstop=2
@@ -60,6 +62,7 @@ nnoremap <C-L> <C-W><C-L>
 " Move to the spliut on the left
 nnoremap <C-H> <C-W><C-H>
 
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -73,6 +76,10 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 
+" Buffer shortcut remaps
+" Buffer List
+nnoremap <leader>bl :buffers 
+
 " Telescope remaps
 nnoremap <leader>ff :lua require"telescope.builtin".find_files({hidden = true })<CR>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -81,6 +88,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Nerdtree remap
 nnoremap <leader>ft :NERDTreeFocus<CR>
+
+" COC Jump Definition bindings
+nnoremap <leader> gs :call CocAction('jumpDefinition', 'split')<CR>
+nnoremap <leader> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
+nnoremap <leader>gt :call CocAction('jumpDefinition', 'tabe')<CR>
 
 
 
